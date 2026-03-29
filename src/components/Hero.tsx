@@ -98,10 +98,10 @@ const Hero = () => {
           <img 
   src={girl} 
   alt="Happy kid" 
-  className="absolute top-40 left-1/2 -translate-x-1/2 w-[70%] max-w-[260px] drop-shadow-xl"
+  className="absolute top-36 left-1/2 -translate-x-1/2 w-[70%] max-w-[260px]  drop-shadow-xl"
 />
           {/* Logo */}
-          <img src={logo} alt="Twinkle Preschool" className="w-44 drop-shadow mt-28" />
+          <img src={logo} alt="Twinkle Preschool" className="w-44 drop-shadow mt-28 " />
 
           {/* Address */}
 <p className="text-white text-[7px] font-bold tracking-wide text-center mt-1">
