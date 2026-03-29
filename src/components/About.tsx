@@ -12,7 +12,7 @@ import Abtpic from "../assets/about-us-image.png";
 
 const About = () => {
   return (
-    <div className="relative w-full overflow-hidden">
+    <div id="about" className="relative w-full overflow-hidden">
 
       {/* TOP SEPARATOR */}
       <img

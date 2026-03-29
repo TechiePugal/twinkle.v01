@@ -68,10 +68,11 @@ const Navbar = () => {
       </div>
 
       {/* MOBILE DROPDOWN MENU */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out
-          ${isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}`}
-      >
+     <div
+  className={`md:hidden absolute top-full right-0 w-[70%] bg-white shadow-xl rounded-bl-2xl
+    transition-all duration-300 ease-in-out
+    ${isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}`}
+>
         <ul className="flex flex-col border-t border-white/30 px-5 py-3 gap-1" style={{ backgroundColor: "transparent" }}>
           {navLinks.map((link) => (
             <li key={link.label}>

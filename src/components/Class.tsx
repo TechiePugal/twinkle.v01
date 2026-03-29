@@ -41,7 +41,7 @@ const classes = [
 
 const Classes = () => {
   return (
-    <div
+    <div id="classes"
       className="relative w-full overflow-hidden py-16 sm:py-20 md:py-24"
       style={{
         backgroundImage: `url(${bgPattern})`,

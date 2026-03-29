@@ -18,7 +18,7 @@ const stats = [
 
 const Hero = () => {
   return (
-    <div className="relative overflow-hidden w-full">
+    <div id="home" className="relative overflow-hidden w-full">
 
       {/* ════════════════════════════════
           DESKTOP LAYOUT (hidden on mobile)
