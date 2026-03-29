@@ -29,7 +29,7 @@ const Hero = () => {
         <img src={bg} className="absolute inset-0 w-full h-full object-cover" alt="" />
 
         {/* RAINBOWS */}
-        <img src={rainbow} className="absolute -top-20 left-1/2 w-[800px] opacity-90 transform -translate-x-1/2 rotate-180" />
+        <img src={rainbow} className="absolute -top-20 left-1/2 w-[820px] opacity-90 transform -translate-x-1/2 rotate-180" />
         <img src={rainbow2} className="absolute -bottom-10 -right-28 w-[300px]" />
         <img src={rainbow3} className="absolute -bottom-80 -left-40 w-[630px]" />
 
@@ -39,23 +39,23 @@ const Hero = () => {
 
         {/* CONTENT */}
         <div className="relative max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 items-center">
-          <img src={girl} alt="kid" className="w-[320px] md:w-[580px] right-10 z-10 relative top-28" />
-          <div className="text-center text-white z-10 md:mr-30 mt-10 md:mt-32">
-            <img src={logo} className="w-68 md:w-150 mx-auto mb-2" />
-            <p className="text-base md:text-lg mb-4 font-medium tracking-wide">
-              No. 34, Sri Nagar, Gobi. Behind Chakra Hospital
-            </p>
-            <h1 className="text-3xl md:text-5xl font-bold leading-snug font-serif tracking-wide">
+          <img src={girl} alt="kid" className="w-[520px] md:w-[900px] right-10 z-10 relative top-44" />
+          <div className="text-center text-white z-10 md:mr-30 mt-10 md:mt-48">
+            <img src={logo} className="w-96 md:w-150 mx-auto mb-2" />
+<p className="text-l md:text-l mb-2 font-bold tracking-wide">
+  No. 34, Sri Nagar, Gobi. Behind Chakra Hospital
+</p>
+            <h1 className="text-xl md:text-3xl font-bold leading-snug font-serif tracking-wide">
               Where your little stars <br /> begin to shine
             </h1>
           </div>
         </div>
 
         {/* DESKTOP STATS */}
-        <div className="absolute bottom-38 left-1/2 -translate-x-1/2 w-full max-w-6xl px-6 z-30">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-6xl px-6 z-30">
           <div className="grid grid-cols-4 gap-6 text-center  rounded-xl py-4">
             {stats.map((item, index) => (
-              <div key={index} className="flex mt-3 items-center justify-center gap-2">
+              <div key={index} className="flex mt-5 items-center justify-center gap-2">
                 <h2 className="text-4xl font-bold text-black">{item.number}</h2>
                 <p className="text-red-500 font-semibold text-lg whitespace-nowrap">{item.label}</p>
               </div>
@@ -85,8 +85,8 @@ const Hero = () => {
         <img src={rainbow3} className="absolute -bottom-40 -left-20 w-[320px]" />
 
         {/* CLOUDS */}
-        <img src={cloudBlue} className="absolute top-4 left-2 w-20" />
-        <img src={cloudYellow} className="absolute top-4 right-2 w-20" />
+        <img src={cloudBlue} className="absolute top-10 left-2 w-24" />
+        <img src={cloudYellow} className="absolute top-10 right-2 w-24" />
 
         {/* MOBILE CONTENT — all stacked, girl pushed down into green area */}
         <div className="relative flex flex-col items-center px-5 z-10">
@@ -95,18 +95,21 @@ const Hero = () => {
           <div className="h-36" />
 
           {/* Girl */}
-          <img src={girl} alt="Happy kid" className="w-[72%] max-w-[260px] drop-shadow-xl" />
-
+          <img 
+  src={girl} 
+  alt="Happy kid" 
+  className="absolute top-40 left-1/2 -translate-x-1/2 w-[70%] max-w-[260px] drop-shadow-xl"
+/>
           {/* Logo */}
-          <img src={logo} alt="Twinkle Preschool" className="w-44 drop-shadow -mt-8" />
+          <img src={logo} alt="Twinkle Preschool" className="w-44 drop-shadow mt-28" />
 
           {/* Address */}
-          <p className="text-white text-[11px] font-medium tracking-wide text-center mt-3">
-            No. 34, Sri Nagar, Gobi. Behind Chakra Hospital
-          </p>
+<p className="text-white text-[7px] font-bold tracking-wide text-center mt-1">
+  No. 34, Sri Nagar, Gobi. Behind Chakra Hospital
+</p>
 
           {/* Tagline */}
-          <h1 className="text-white text-base font-bold font-serif tracking-wide text-center leading-snug mt-1 mb-4">
+          <h1 className="text-white text-[13px] text-base font-bold font-serif tracking-wide text-center leading-snug mt-0 mb-2">
             Where your little stars <br /> begin to shine
           </h1>
         </div>

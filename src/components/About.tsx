@@ -50,7 +50,7 @@ const About = () => {
                      -left-16 bottom-16 w-[180px]
                      sm:-left-24 sm:bottom-20 sm:w-[280px]
                      md:-left-32 md:bottom-24 md:w-[380px]
-                     lg:-left-32 lg:bottom-28 lg:w-[400px]"
+                     lg:-left-32 lg:bottom-28 lg:w-[330px]"
         />
 
         {/* ── RAINBOW BOTTOM-RIGHT ───────────────────── */}
@@ -61,7 +61,7 @@ const About = () => {
                      -right-8 -bottom-4 w-[100px]
                      sm:-right-10 sm:-bottom-6 sm:w-[140px]
                      md:-right-16 md:-bottom-8 md:w-[180px]
-                     lg:-right-20 lg:-bottom-10 lg:w-[200px]"
+                     lg:-right-20 lg:-bottom-10 lg:w-[180px]"
         />
 
         {/* ── FLOWER YELLOW (bottom-right) ───────────── */}
@@ -72,7 +72,7 @@ const About = () => {
                      bottom-6 right-6 w-16
                      sm:bottom-8 sm:right-16 sm:w-24
                      md:bottom-10 md:right-32 md:w-28
-                     lg:bottom-10 lg:right-40 lg:w-36"
+                     lg:bottom-1 lg:right-25 lg:w-36"
         />
 
         {/* ── FLOWER BLUE (top-right) ────────────────── */}
@@ -130,22 +130,22 @@ const About = () => {
               className="absolute -top-8 left-4 w-20 pointer-events-none z-10"
             />
 
-            <h1 className="text-3xl sm:text-4xl font-bold mb-4 tracking-wide pt-8">
+            <h1 className="text-3xl sm:text-4xl font-serif font-bold mb-4 tracking-wide pt-8">
               ABOUT US
             </h1>
-            <p className="mb-3 text-sm sm:text-base leading-relaxed text-justify">
+            <p className="mb-3 font-serif font-bold text-sm sm:text-base leading-relaxed text-justify">
               Twinkle Preschool is the leading kids school in Gobi with more
               than a decade of experience in the preschool industry. We believe
               every child is unique and full of potential. Our preschool
               provides a safe, happy, and nurturing environment where little
               minds grow through play, creativity, and exploration.
             </p>
-            <p className="mb-3 text-sm sm:text-base leading-relaxed text-justify">
+            <p className="mb-3 text-sm font-serif font-bold sm:text-base leading-relaxed text-justify">
               Our mission is to support the overall development of every child —
               socially, emotionally, physically, and academically. We focus on
               building strong foundations for lifelong learning.
             </p>
-            <p className="text-sm sm:text-base leading-relaxed text-justify">
+            <p className="text-sm font-serif font-bold sm:text-base leading-relaxed text-justify">
               We provide a secure, clean, and child-friendly campus where
               children feel comfortable and confident. Safety and happiness are
               our top priorities.
@@ -156,44 +156,50 @@ const About = () => {
         {/* ════════════════════════════════════════════
             DESKTOP LAYOUT  (hidden below md)
         ════════════════════════════════════════════ */}
-        <div className="hidden md:flex items-center justify-center min-h-screen px-10 lg:px-20 z-10 relative">
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center w-full max-w-6xl mt-16 lg:mt-24">
+<div className="hidden md:flex items-center justify-start min-h-screen px-10 lg:px-20 z-10 relative">
+  
+  <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center w-full max-w-7xl mt-12 lg:mt-24 ml-[-35px]">
 
-            {/* LEFT — image */}
-            <div className="flex justify-center items-center">
-              <img
-                src={Abtpic}
-                alt="kids"
-                className="w-[340px] lg:w-[420px] xl:w-[480px] h-auto object-contain drop-shadow-2xl"
-              />
-            </div>
+    {/* LEFT — image */}
+    <div className="flex justify-center items-center">
+      <img
+        src={Abtpic}
+        alt="kids"
+        className="w-[340px] lg:w-[420px] xl:w-[480px] h-auto object-contain drop-shadow-2xl"
+      />
+    </div>
 
-            {/* RIGHT — text */}
-            <div className="text-white max-w-xl text-justify">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6 tracking-wide">
-                ABOUT US
-              </h1>
-              <p className="mb-4 text-base lg:text-lg leading-relaxed">
-                Twinkle Preschool is the leading kids school in Gobi with more
-                than a decade of experience in the preschool industry. We believe
-                every child is unique and full of potential. Our preschool
-                provides a safe, happy, and nurturing environment where little
-                minds grow through play, creativity, and exploration.
-              </p>
-              <p className="mb-4 text-base lg:text-lg leading-relaxed">
-                Our mission is to support the overall development of every child —
-                socially, emotionally, physically, and academically. We focus on
-                building strong foundations for lifelong learning.
-              </p>
-              <p className="text-base lg:text-lg leading-relaxed">
-                We provide a secure, clean, and child-friendly campus where
-                children feel comfortable and confident. Safety and happiness are
-                our top priorities.
-              </p>
-            </div>
+    {/* RIGHT — text */}
+    <div className="text-white max-w-xl mr-10 text-justify p-4">
+      
+      <h1 className="text-4xl lg:text-5xl font-serif font-bold font-extrabold mb-6 tracking-wider font-[Comic_Sans_MS]">
+        ABOUT US
+      </h1>
 
-          </div>
-        </div>
+      <p className="mb-4 text-base lg:text-lg leading-relaxed font-serif font-bold tracking-wide">
+        Twinkle Preschool is the leading kids school in Gobi with more
+        than a decade of experience in the preschool industry. We believe
+        every child is unique and full of potential. Our preschool
+        provides a safe, happy, and nurturing environment where little
+        minds grow through play, creativity, and exploration.
+      </p>
+
+      <p className="mb-4 text-base lg:text-lg font-serif font-bold leading-relaxed">
+        Our mission is to support the overall development of every child —
+        socially, emotionally, physically, and academically. We focus on
+        building strong foundations for lifelong learning.
+      </p>
+
+      <p className="text-base lg:text-lg font-serif font-bold leading-relaxed">
+        We provide a secure, clean, and child-friendly campus where
+        children feel comfortable and confident. Safety and happiness are
+        our top priorities.
+      </p>
+
+    </div>
+
+  </div>
+</div>
 
       </div>
     </div>
