@@ -122,11 +122,9 @@ const Classes = () => {
             </h2>
 
             {/* DESCRIPTION */}
-           <p className="text-gray-800 font-serif font-bold leading-relaxed text-justify
+<p className="text-gray-800 font-serif font-bold leading-relaxed text-justify
               text-[14px] sm:text-[15px] md:text-base
-              px-2 pb-1
-              max-w-[220px] sm:max-w-[240px] md:max-w-[260px]
-              mx-auto">
+              w-full px-2 pb-1">
   {item.desc}
 </p>
           </div>
