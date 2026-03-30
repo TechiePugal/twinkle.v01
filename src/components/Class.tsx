@@ -99,7 +99,7 @@ const Classes = () => {
         {classes.map((item, index) => (
           <div
             key={index}
-            className="bg-gray-100 rounded-[32px] sm:rounded-[40px] p-2
+            className="bg-gray-100 rounded-[32px] sm:rounded-[40px] p-3
                        text-center shadow-xl
                        hover:scale-105 transition duration-300
                        flex flex-col items-center
@@ -108,7 +108,7 @@ const Classes = () => {
                        min-h-[330px] sm:min-h-[350px] md:min-h-[370px]"
           >
             {/* IMAGE */}
-            <div className="w-full aspect-square rounded-[24px] sm:rounded-[30px] -mb-8 flex items-center justify-center">
+            <div className="w-full aspect-square rounded-[24px] sm:rounded-[30px] -mb-10 -mt-9 flex items-center justify-center">
               <img
                 src={item.img}
                 alt={item.title}
@@ -122,12 +122,13 @@ const Classes = () => {
             </h2>
 
             {/* DESCRIPTION */}
-            <p className="text-gray-800 font-serif font-bold leading-relaxed text-justify
-                          text-[11px] sm:text-xs px-2 pb-1
-                          max-w-[220px] sm:max-w-[240px] md:max-w-[260px]
-                          mx-auto">
-              {item.desc}
-            </p>
+           <p className="text-gray-800 font-serif font-bold leading-relaxed text-justify
+              text-[14px] sm:text-[15px] md:text-base
+              px-2 pb-1
+              max-w-[220px] sm:max-w-[240px] md:max-w-[260px]
+              mx-auto">
+  {item.desc}
+</p>
           </div>
         ))}
       </div>

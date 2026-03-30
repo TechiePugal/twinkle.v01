@@ -52,23 +52,38 @@ const Hero = () => {
         </div>
 
         {/* DESKTOP STATS */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-6xl px-6 z-30">
-          <div className="grid grid-cols-4 gap-6 text-center  rounded-xl py-4">
-            {stats.map((item, index) => (
-              <div key={index} className="flex mt-5 items-center justify-center gap-2">
-                <h2 className="text-4xl font-bold text-black">{item.number}</h2>
-                <p className="text-red-500 font-semibold text-lg whitespace-nowrap">{item.label}</p>
-              </div>
-            ))}
-          </div>
+{/* DESKTOP STATS — FIXED */}
+<div className="absolute bottom-0 left-0 w-full z-30">
+
+  {/* Separator stays untouched */}
+  <img
+    src={separator}
+    alt="separator"
+    className="w-full block -mb-32"
+  />
+
+  {/* Stats over separator */}
+<div className="absolute inset-0 flex items-center justify-center px-6 translate-y-4">
+    <div className="grid grid-cols-4 w-full max-w-6xl text-center">
+      {stats.map((item, index) => (
+        <div key={index} className="flex items-center justify-center gap-2">
+          <h2 className="text-3xl font-bold text-black">{item.number}</h2>
+          <p className="text-red-500 font-semibold text-base whitespace-nowrap">
+            {item.label}
+          </p>
         </div>
+      ))}
+    </div>
+  </div>
+
+</div>
 
         {/* DESKTOP SEPARATOR */}
-        <img
+        {/* <img
           src={separator}
           alt="separator"
-          className="absolute -bottom-36 left-1/2 -translate-x-1/2 w-screen max-w-none z-10"
-        />
+          className="absolute -bottom-23 left-1/2 -translate-x-1/2 w-screen max-w-none z-10"
+        /> */}
       </div>
 
       {/* ════════════════════════════════

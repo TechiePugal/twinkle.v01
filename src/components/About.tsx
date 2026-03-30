@@ -43,7 +43,7 @@ const About = () => {
         />
 
         {/* ── RAINBOW BOTTOM-LEFT ────────────────────── */}
-        <img
+        {/* <img
           src={rainbow2}
           alt=""
           className="absolute rotate-90 pointer-events-none
@@ -51,7 +51,7 @@ const About = () => {
                      sm:-left-24 sm:bottom-20 sm:w-[280px]
                      md:-left-32 md:bottom-24 md:w-[380px]
                      lg:-left-32 lg:bottom-28 lg:w-[330px]"
-        />
+        /> */}
 
         {/* ── RAINBOW BOTTOM-RIGHT ───────────────────── */}
         <img
@@ -121,7 +121,7 @@ const About = () => {
           />
 
           {/* Text block — plane sits absolute above the heading */}
-          <div className="relative text-white text-center w-full -mt-4 bg-black/20 rounded-2xl px-4 py-4">
+          <div className="relative text-white text-center w-full -mt-4  rounded-2xl px-4 py-4">
 
             {/* Plane — absolute, above "ABOUT US" heading */}
             <img
@@ -130,26 +130,33 @@ const About = () => {
               className="absolute -top-8 left-4 w-20 pointer-events-none z-10"
             />
 
-            <h1 className="text-3xl sm:text-4xl font-serif font-bold mb-4 tracking-wide pt-8">
-              ABOUT US
-            </h1>
-            <p className="mb-3 font-serif font-bold text-sm sm:text-base leading-relaxed text-justify">
-              Twinkle Preschool is the leading kids school in Gobi with more
-              than a decade of experience in the preschool industry. We believe
-              every child is unique and full of potential. Our preschool
-              provides a safe, happy, and nurturing environment where little
-              minds grow through play, creativity, and exploration.
-            </p>
-            <p className="mb-3 text-sm font-serif font-bold sm:text-base leading-relaxed text-justify">
-              Our mission is to support the overall development of every child —
-              socially, emotionally, physically, and academically. We focus on
-              building strong foundations for lifelong learning.
-            </p>
-            <p className="text-sm font-serif font-bold sm:text-base leading-relaxed text-justify">
-              We provide a secure, clean, and child-friendly campus where
-              children feel comfortable and confident. Safety and happiness are
-              our top priorities.
-            </p>
+            <div className="bg-gray-500/20  rounded-xl p-4">
+
+  <h1 className="text-3xl sm:text-4xl font-serif font-bold mb-2 tracking-wide pt-0">
+    ABOUT US
+  </h1>
+
+  <p className="mb-3 font-serif font-bold text-sm sm:text-base leading-relaxed text-justify">
+    Twinkle Preschool is the leading kids school in Gobi with more
+    than a decade of experience in the preschool industry. We believe
+    every child is unique and full of potential. Our preschool
+    provides a safe, happy, and nurturing environment where little
+    minds grow through play, creativity, and exploration.
+  </p>
+
+  <p className="mb-3 text-sm font-serif font-bold sm:text-base leading-relaxed text-justify">
+    Our mission is to support the overall development of every child —
+    socially, emotionally, physically, and academically. We focus on
+    building strong foundations for lifelong learning.
+  </p>
+
+  <p className="text-sm font-serif font-bold sm:text-base leading-relaxed text-justify">
+    We provide a secure, clean, and child-friendly campus where
+    children feel comfortable and confident. Safety and happiness are
+    our top priorities.
+  </p>
+
+</div>
           </div>
         </div>
 
@@ -170,33 +177,34 @@ const About = () => {
     </div>
 
     {/* RIGHT — text */}
-    <div className="text-white max-w-xl mr-10 text-justify p-4">
-      
-      <h1 className="text-4xl lg:text-5xl font-serif font-bold font-extrabold mb-6 tracking-wider font-[Comic_Sans_MS]">
-        ABOUT US
-      </h1>
+<div className="text-white max-w-xl mr-10 text-justify p-6 
+                bg-gray-500/20  rounded-xl">
 
-      <p className="mb-4 text-base lg:text-lg leading-relaxed font-serif font-bold tracking-wide">
-        Twinkle Preschool is the leading kids school in Gobi with more
-        than a decade of experience in the preschool industry. We believe
-        every child is unique and full of potential. Our preschool
-        provides a safe, happy, and nurturing environment where little
-        minds grow through play, creativity, and exploration.
-      </p>
+  <h1 className="text-4xl text-white text-center lg:text-5xl font-serif font-bold mb-6 tracking-wider font-[Comic_Sans_MS]">
+    ABOUT US
+  </h1>
 
-      <p className="mb-4 text-base lg:text-lg font-serif font-bold leading-relaxed">
-        Our mission is to support the overall development of every child —
-        socially, emotionally, physically, and academically. We focus on
-        building strong foundations for lifelong learning.
-      </p>
+  <p className="mb-4 text-base lg:text-lg leading-relaxed font-serif font-bold tracking-wide">
+    Twinkle Preschool is the leading kids school in Gobi with more
+    than a decade of experience in the preschool industry. We believe
+    every child is unique and full of potential. Our preschool
+    provides a safe, happy, and nurturing environment where little
+    minds grow through play, creativity, and exploration.
+  </p>
 
-      <p className="text-base lg:text-lg font-serif font-bold leading-relaxed">
-        We provide a secure, clean, and child-friendly campus where
-        children feel comfortable and confident. Safety and happiness are
-        our top priorities.
-      </p>
+  <p className="mb-4 text-base lg:text-lg font-serif font-bold leading-relaxed">
+    Our mission is to support the overall development of every child —
+    socially, emotionally, physically, and academically. We focus on
+    building strong foundations for lifelong learning.
+  </p>
 
-    </div>
+  <p className="text-base lg:text-lg font-serif font-bold leading-relaxed">
+    We provide a secure, clean, and child-friendly campus where
+    children feel comfortable and confident. Safety and happiness are
+    our top priorities.
+  </p>
+
+</div>
 
   </div>
 </div>
