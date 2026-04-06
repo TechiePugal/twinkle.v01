@@ -57,7 +57,7 @@ const ContactSection = () => {
             <input type="text" placeholder="Phone number" className="w-full p-3 rounded-md bg-white outline-none"/>
             <input type="text" placeholder="Child Name" className="w-full p-3 rounded-md bg-white outline-none"/>
             <input type="text" placeholder="Age of Child" className="w-full p-3 rounded-md bg-white outline-none"/>
-            <textarea placeholder="Message" rows="4" className="w-full p-3 rounded-md bg-white outline-none"/>
+            <textarea placeholder="Message" rows={4} className="w-full p-3 rounded-md bg-white outline-none"/>
           </div>
           <button
   className="w-full bg-gradient-to-r from-pink-400 to-pink-500
