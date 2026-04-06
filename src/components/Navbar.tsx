@@ -6,6 +6,9 @@ const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Classes", href: "#classes" },
+  { label: "Why Us?", href: "#whywe" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {

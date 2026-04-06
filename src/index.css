@@ -12,7 +12,15 @@ body {
   font-family: 'Arial', sans-serif;
   overflow-x: hidden;
 }
+/* Hide scrollbar completely */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 .hero-section {
   background: linear-gradient(135deg, #4fd1c5 0%, #63b3ed 50%, #4fd1c5 100%);
   position: relative;
