@@ -58,24 +58,23 @@ const WhyBest = () => {
 
       {/* BACKGROUND */}
       <div
-        className="relative w-full py-20 sm:py-24 md:py-28"
+        className="relative w-full py-16 sm:py-20 md:py-28"
         style={{
           backgroundImage: `url(${bg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundSize: "auto",
+          backgroundPosition: "top left",
+          backgroundRepeat: "repeat",
         }}
       >
 
-        {/* LEFT RAINBOW */}
+        {/* LEFT RAINBOW — hidden on very small screens */}
         <img
           src={rainbow}
           alt=""
-          className="absolute pointer-events-none rotate-90 opacity-90
-                     -left-16 top-[30%] w-[120px]
-                     sm:-left-16 sm:w-[220px]
-                     md:-left-24 md:w-[300px]
-                     lg:-left-32 lg:w-[320px]"
+          className="hidden sm:block absolute pointer-events-none rotate-90 opacity-90
+                     -left-16 top-[30%] w-[160px]
+                     md:-left-20 md:w-[240px]
+                     lg:-left-28 lg:w-[300px]"
         />
 
         {/* TOP CENTER RAINBOW */}
@@ -83,107 +82,102 @@ const WhyBest = () => {
           src={rainbow}
           alt=""
           className="absolute pointer-events-none rotate-180 opacity-80
-                     -top-16 left-1/2 -translate-x-1/2 w-[240px]
-                     sm:w-[360px]
-                     md:w-[520px]
-                     lg:w-[650px]"
+                     -top-10 left-1/2 -translate-x-1/2 w-[200px]
+                     sm:-top-14 sm:w-[320px]
+                     md:-top-16 md:w-[460px]
+                     lg:w-[600px]"
         />
 
-        {/* BOTTOM RIGHT RAINBOW */}
+        {/* BOTTOM RIGHT RAINBOW — hidden on very small screens */}
         <img
           src={rainbowCopy}
           alt=""
-          className="absolute pointer-events-none rotate-180 opacity-90
-                     -right-6 bottom-36 w-[60px]
-                     sm:-right-8 sm:w-[110px]
-                     md:-right-10 md:w-[140px]
-                     lg:-right-12 lg:w-[130px]"
+          className="hidden sm:block absolute pointer-events-none rotate-180 opacity-90
+                     -right-6 bottom-28 w-[80px]
+                     md:-right-8 md:bottom-32 md:w-[120px]
+                     lg:-right-10 lg:w-[140px]"
         />
 
-        {/* BALLOON */}
+        {/* BALLOON — scaled nicely across breakpoints */}
         <img
           src={balloon}
           alt=""
           className="absolute pointer-events-none z-10
-                     right-10 top-[50%] -translate-y-1/2 w-12
-                     sm:right-4 sm:w-24
-                     md:right-6 md:w-32
-                     lg:right-24 lg:w-38"
+                     right-2 top-[48%] -translate-y-1/2 w-10
+                     sm:right-3 sm:w-20
+                     md:right-6 md:w-28
+                     lg:right-20 lg:w-36"
         />
 
-        {/* FLOWER BLUE */}
+        {/* FLOWER BLUE — hidden on very small screens */}
         <img
           src={flowerBlue}
           alt=""
-          className="absolute pointer-events-none
-                     bottom-12 left-4 w-20
-                     sm:bottom-10 sm:left-8 sm:w-28
-                     md:bottom-12 md:left-12 md:w-32
-                     lg:bottom-24 lg:left-16 lg:w-36"
+          className="hidden sm:block absolute pointer-events-none
+                     bottom-8 left-4 w-20
+                     md:bottom-10 md:left-10 md:w-28
+                     lg:bottom-20 lg:left-14 lg:w-36"
         />
 
         {/* TITLE */}
-<div className="relative z-10 px-5 sm:px-10 md:px-16 lg:px-12 mb-6 sm:mb-8 md:mb-10">
+<div className="relative z-10 px-5 sm:px-10 md:px-16 lg:px-20 mb-6 sm:mb-8 md:mb-10">
   <h1
-    className="text-xl font-extrabold sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#3dbfb8] tracking-wide"
-    style={{ fontFamily: "'Fredoka', sans-serif" }}
+    className="text-sm sm:text-lg md:text-2xl lg:text-3xl font-black text-[#3dbfb8] tracking-wide whitespace-nowrap overflow-hidden text-ellipsis"
+    style={{ fontFamily: "'Poppins', sans-serif" }}
   >
     WHY WE ARE THE BEST ?
   </h1>
 </div>
 
-        {/* CARDS GRID */}
+        {/* CARDS GRID — 1 col mobile, 2 col tablet, 3 col desktop */}
 <div className="relative z-10 px-4 sm:px-8 md:px-12 lg:px-16">
-  <div className="max-w-5xl mx-auto
-                  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-                  gap-8 sm:gap-9 md:gap-8 items-stretch">
-
+  <div
+    className="max-w-5xl mx-auto
+               grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+               gap-5 sm:gap-6 md:gap-7 justify-items-center"
+  >
     {features.map((item, index) => (
       <div
         key={index}
-        className="bg-[#3dbfb8] rounded-2xl sm:rounded-3xl p-2.5
-                   shadow-lg hover:scale-[1.02] transition-transform duration-300
-                   flex flex-col"
+        className="bg-[#3dbfb8] rounded-2xl sm:rounded-3xl p-3 sm:p-4
+                   w-[85%] sm:w-full   /* 👈 reduce width only in mobile */
+                   shadow-lg hover:scale-[1.02] active:scale-[0.98]
+                   transition-transform duration-300
+                   flex flex-col items-center"
       >
-        <div
-          className="rounded-xl sm:rounded-2xl mb-2 sm:mb-3 overflow-hidden flex items-center justify-center"
-          style={{ height: "120px" }}
-        >
-<div className="w-52 h-52:w-52 sm:h-52 md:w-64 md:h-64 flex items-center justify-center">
-  <img
-    src={item.icon}
-    alt={item.title}
-    className="w-full h-full object-contain"
-  />
-</div>
+        {/* ICON */}
+        <div className="flex items-center justify-center w-full h-24 sm:h-28 md:h-32 mb-2">
+          <img
+            src={item.icon}
+            alt={item.title}
+            className="w-full h-full object-contain"
+          />
         </div>
 
-        <h2
-          className="font-extrabold text-sm sm:text-base md:text-lg mb-2 text-yellow-300 text-center"
-          style={{ fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive" }}
-        >
-          {item.title}
-        </h2>
+        {/* TEXT */}
+        <div className="flex flex-col items-center w-full">
+          <h2
+            className="font-extrabold text-base sm:text-lg md:text-xl   /* 👈 increased */
+                       text-yellow-300 text-center mb-1"
+            style={{ fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive" }}
+          >
+            {item.title}
+          </h2>
 
-        <p
-          className="text-white font-extrabold text-sm sm:text-base md:text-l m-2 leading-relaxed flex-grow text-justify"
-          style={{ fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive" }}
-        >
-          {item.desc}
-        </p>
+          <p
+            className="text-white font-semibold text-sm sm:text-base md:text-lg   /* 👈 increased */
+                       leading-relaxed text-justify"
+            style={{ fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive" }}
+          >
+            {item.desc}
+          </p>
+        </div>
       </div>
     ))}
   </div>
 </div>
 
       </div>
-
-      {/* BOTTOM SEPARATOR */}
-      {/* <img
-        src={separator}
-        alt=""
-        className="absolute -bottom-4 sm:-bottom-8 md:-bottom-12 left-0 w-full z-20 pointer-events-none rotate-180"
-      /> */}
     </div>
   );
 };
