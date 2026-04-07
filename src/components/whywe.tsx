@@ -120,10 +120,10 @@ const WhyBest = () => {
         />
 
         {/* TITLE */}
-<div className="relative z-10 px-5 sm:px-10 md:px-16 lg:px-20 mb-6 sm:mb-8 md:mb-10">
+<div className="relative  z-10 px-5 sm:px-10 md:px-16 lg:px-20 mb-6 sm:mb-8 md:mb-10">
   <h1
-    className="text-sm sm:text-lg md:text-2xl lg:text-3xl font-black text-[#3dbfb8] tracking-wide whitespace-nowrap overflow-hidden text-ellipsis"
-    style={{ fontFamily: "'Poppins', sans-serif" }}
+    className="text-sm  font-serif font-bold sm:text-lg md:text-2xl lg:text-3xl font-black text-[#3dbfb8]  tracking-wide whitespace-nowrap overflow-hidden text-ellipsis"
+
   >
     WHY WE ARE THE BEST ?
   </h1>
@@ -146,7 +146,7 @@ const WhyBest = () => {
                    flex flex-col items-center"
       >
         {/* ICON */}
-        <div className="flex items-center justify-center w-full h-24 sm:h-28 md:h-32 mb-2">
+        <div className="flex  items-center justify-center w-full h-24 sm:h-28 md:h-32 mb-2">
           <img
             src={item.icon}
             alt={item.title}
@@ -158,16 +158,16 @@ const WhyBest = () => {
         <div className="flex flex-col items-center w-full">
           <h2
             className="font-extrabold text-base sm:text-lg md:text-xl   /* 👈 increased */
-                       text-yellow-300 text-center mb-1"
-            style={{ fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive" }}
+                       text-yellow-300 text-center mb-1 font-serif font-bold"
+
           >
             {item.title}
           </h2>
 
           <p
             className="text-white font-semibold text-sm sm:text-base md:text-lg   /* 👈 increased */
-                       leading-relaxed text-justify"
-            style={{ fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive" }}
+                       leading-relaxed text-justify font-serif font-bold"
+
           >
             {item.desc}
           </p>

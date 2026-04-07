@@ -76,7 +76,7 @@ const HappyParents = () => {
       >
         {/* TITLE */}
         <div className="text-center pt-10 sm:pt-14 md:pt-16 pb-6 px-4">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#3dbfb8] tracking-wide leading-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-serif  text-[#3dbfb8] tracking-wide leading-tight">
             OUR HAPPY PARENTS
           </h1>
         </div>
@@ -135,8 +135,8 @@ const HappyParents = () => {
                   >
                     {/* NAME */}
                     <h2
-                      className="font-extrabold text-sm sm:text-base md:text-lg mb-2 text-yellow-200 text-center"
-                      style={{ fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive" }}
+                      className="font-extrabold font-serif font-bold text-sm sm:text-base md:text-lg mb-2 text-yellow-200 text-center"
+                      
                     >
                       {review.name}
                     </h2>
@@ -144,8 +144,8 @@ const HappyParents = () => {
                     {/* TEXT */}
                     <div className="flex-1 overflow-y-auto scrollbar-hide pr-1 relative">
                       <p
-                        className="text-black text-xs sm:text-sm md:text-base leading-relaxed text-justify"
-                        style={{ fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive" }}
+                        className="text-black font-serif font-bold text-xs sm:text-sm md:text-base leading-relaxed text-justify"
+
                       >
                         {review.text}
                       </p>
@@ -184,7 +184,7 @@ const HappyParents = () => {
 
           <div className="absolute text-white -bottom-2 sm:bottom-4
                           text-xs sm:text-lg md:text-2xl
-                          left-1/2 -translate-x-1/2 text-center font-extrabold whitespace-nowrap">
+                          left-1/2 -translate-x-1/2 text-center font-serif  font-extrabold whitespace-nowrap">
             GOVERNMENT <br /> APPROVED <br /> PRESCHOOL
           </div>
 

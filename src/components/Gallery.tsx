@@ -113,7 +113,7 @@ const GallerySection = () => {
       <img
         src={separator}
         alt=""
-        className="absolute -top-4 sm:-top-8 md:-top-12 left-0 w-full z-20 pointer-events-none"
+        className="absolute -top-4 sm:-top-8 md:-top-24 left-0 w-full z-20 pointer-events-none"
       />
 
       {/* BACKGROUND */}
@@ -146,8 +146,8 @@ const GallerySection = () => {
         {/* TITLE */}
         <div className="text-center mb-8 sm:mb-10 px-4">
           <h1
-            className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white"
-            style={{ fontFamily: "'Fredoka', sans-serif" }}
+            className="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold text-white"
+
           >
             GALLERY
           </h1>
@@ -175,8 +175,8 @@ const GallerySection = () => {
                   </div>
 
                   <h2
-                    className="text-center mt-2 sm:mt-3 text-[#2f8f83] font-extrabold text-[11px] sm:text-sm md:text-base leading-tight"
-                    style={{ fontFamily: "'Comic Sans MS', cursive" }}
+                    className="text-center font-serif  mt-2 sm:mt-3 text-[#2f8f83] font-extrabold text-[11px] sm:text-sm md:text-base leading-tight"
+                    
                   >
                     {item.title}
                   </h2>

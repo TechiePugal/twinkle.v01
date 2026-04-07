@@ -63,19 +63,14 @@ const ContactSection = () => {
 
         {/* MOBILE: aero + flower at very top */}
         <div className="flex lg:hidden justify-center items-center gap-6 mb-6">
-          <img src={aero} alt="aeroplane" className="w-24 sm:w-28 animate-bounce" />
-          <img src={YellowFlower} alt="" className="w-14 sm:w-16 opacity-90" />
+          <img src={aero} alt="aeroplane" className="w-24 sm:w-28" />
+          <img src={YellowFlower} alt="" className="w-14 sm:w-16 opacity-100" />
         </div>
 
-        {/*
-          Desktop  → 3 columns: [form] [aeroplane+flower] [contact]
-          Mobile   → single column stacked
-        */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_180px_1fr] gap-6 items-start">
 
           {/* ══════════ COL 1 — FORM ══════════ */}
           <div className="flex flex-col gap-3">
-            {/* Title centered */}
             <h2
               className="text-white text-xl sm:text-2xl md:text-3xl font-extrabold mb-1 text-center"
               style={{ fontFamily: "'Fredoka', sans-serif" }}
@@ -110,12 +105,12 @@ const ContactSection = () => {
             </form>
           </div>
 
-          {/* ══════════ COL 2 — AEROPLANE top-center (desktop only) ══════════ */}
+          {/* ══════════ COL 2 — AEROPLANE (no animation now) ══════════ */}
           <div className="hidden lg:flex flex-col items-center justify-start pt-10 gap-14">
             <img
               src={aero}
               alt="aeroplane"
-              className="w-40 xl:w-48 animate-bounce drop-shadow-lg"
+              className="w-40 xl:w-48 drop-shadow-lg"
             />
             <img
               src={YellowFlower}
@@ -125,71 +120,75 @@ const ContactSection = () => {
           </div>
 
           {/* ══════════ COL 3 — CONTACT ══════════ */}
-          <div className="flex flex-col gap-3 sm:gap-4">
+<div className="flex flex-col gap-3 sm:gap-4 relative text-center lg:text-left">
 
-            {/* Title + blue flower */}
-            <div className="flex items-start justify-between gap-2">
-              <h2
-                className="text-white text-xl sm:text-2xl md:text-3xl font-extrabold"
-                style={{ fontFamily: "'Fredoka', sans-serif" }}
-              >
-                CONTACT US :
-              </h2>
-              <img src={flower} alt="" className="w-12 sm:w-14 flex-shrink-0" />
-            </div>
+  {/* HEADER */}
+  <div className="relative flex items-center justify-center lg:justify-between">
+    <h2
+      className="text-white text-xl sm:text-2xl md:text-3xl font-extrabold"
+      style={{ fontFamily: "'Fredoka', sans-serif" }}
+    >
+      CONTACT
+    </h2>
 
-            {/* Address */}
-            <p
-              className="text-white text-sm sm:text-base md:text-lg leading-relaxed"
-              style={{ fontFamily: "'Comic Sans MS', cursive" }}
-            >
-              Twinkle Preschool<br />
-              No. 34, Sri Nagar, Gobichettipalayam.<br />
-              Behind Chakra hospital.<br />
-              Ph : 95979 43221, 96777 20424
-            </p>
+    {/* FLOWER (mobile optimized) */}
+    <img
+      src={flower}
+      alt=""
+      className="
+        w-12 sm:w-44
+        absolute 
+        right-2 top-0
+        lg:static lg:right-auto lg:top-auto
+      "
+    />
+  </div>
 
-            {/* Social icons */}
-            <div className="flex flex-col gap-3">
-              {[
-                { icon: <FaWhatsapp className="text-green-500 text-2xl" />, label: "75300 62559" },
-                { icon: <FaYoutube className="text-red-600 text-2xl" />, label: "Twinkle kids creatives" },
-                { icon: <FaInstagram className="text-pink-500 text-2xl" />, label: "Twinkle preschool gobi" },
-                { icon: <FaFacebook className="text-blue-600 text-2xl" />, label: "Twinkle preschool gobi" },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 cursor-pointer group">
-                  <div className="bg-white p-2 rounded-full shadow flex-shrink-0
-                                  group-hover:scale-110 transition-transform duration-200">
-                    {item.icon}
-                  </div>
-                  <span
-                    className="text-white text-sm sm:text-base md:text-lg font-semibold"
-                    style={{ fontFamily: "'Comic Sans MS', cursive" }}
-                  >
-                    {item.label}
-                  </span>
-                </div>
-              ))}
-            </div>
+  {/* ADDRESS */}
+  <p className="text-white font-serif font-bold text-sm sm:text-base md:text-lg leading-relaxed text-center lg:text-left">
+    Twinkle Preschool<br />
+    No. 34, Sri Nagar, Gobichettipalayam.<br />
+    Behind Chakra hospital.<br />
+    Ph : 95979 43221, 96777 20424
+  </p>
 
-            {/* Map */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-white/40 mt-1">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.369262521315!2d77.4206653745255!3d11.453250646346154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba93d1812068f81%3A0xfe99132eaf499166!2sTwinkle%20Pre%20School%20-%20Kids%20school!5e0!3m2!1sen!2sin!4v1775494492853!5m2!1sen!2sin"
-                className="w-full h-40 sm:h-44 md:h-48"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
+  {/* SOCIAL */}
+  <div className="flex flex-col gap-3">
+    {[
+      { icon: <FaWhatsapp className="text-green-500 text-2xl" />, label: "75300 62559" },
+      { icon: <FaYoutube className="text-red-600 text-2xl" />, label: "Twinkle kids creatives" },
+      { icon: <FaInstagram className="text-pink-500 text-2xl" />, label: "Twinkle preschool gobi" },
+      { icon: <FaFacebook className="text-blue-600 text-2xl" />, label: "Twinkle preschool gobi" },
+    ].map((item, i) => (
+      <div
+        key={i}
+        className="flex items-center justify-center lg:justify-start gap-3 cursor-pointer group"
+      >
+        <div className="bg-white p-2 rounded-full shadow group-hover:scale-110 transition">
+          {item.icon}
+        </div>
+        <span className="text-white font-serif font-bold text-sm sm:text-base md:text-lg">
+          {item.label}
+        </span>
+      </div>
+    ))}
+  </div>
 
-          </div>
+  {/* MAP */}
+  <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-white/40 mt-1 w-full max-w-md mx-auto lg:mx-0">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.369262521315!2d77.4206653745255!3d11.453250646346154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba93d1812068f81%3A0xfe99132eaf499166!2sTwinkle%20Pre%20School%20-%20Kids%20school!5e0!3m2!1sen!2sin!4v1775494492853!5m2!1sen!2sin"
+      className="w-full h-40 sm:h-44 md:h-48"
+      style={{ border: 0 }}
+      loading="lazy"
+    />
+  </div>
+
+</div>
         </div>
 
       </div>
 
-      {/* FOOTER SEPARATOR — image only, no text overlay */}
       <div className="relative w-full mt-2 sm:mt-6">
         <img src={separator} className="w-full" alt="" />
       </div>
