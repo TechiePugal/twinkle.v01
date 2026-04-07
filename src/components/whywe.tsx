@@ -21,7 +21,7 @@ const features = [
   {
     icon: icon2,
     title: "Activity based learning",
-    desc: "Modern activity-based curriculum and multi sensory learning that makes every lesson, fun and memorable.",
+    desc: "Modern activity based curriculum and multi sensory learning that makes every lesson, fun and memorable.",
   },
   {
     icon: icon3,

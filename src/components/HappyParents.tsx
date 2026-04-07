@@ -3,7 +3,7 @@ import bg from "../assets/yellow bgm.jpg";
 import rainbow from "../assets/RAINBOW.png";
 import rainbowCopy from "../assets/RAINBOW - Copy.png";
 import flowerBlue from "../assets/blue-cloud-with-star.png";
-import plane from "../assets/AERO1.png";
+import plane from "../assets/HELICOPTER.png";
 import separator from "../assets/WHITE-SEPERATOR.png";
 
 const reviews = [
@@ -36,7 +36,6 @@ const reviews = [
 const HappyParents = () => {
   const [index, setIndex] = useState(0);
 
-  // On mobile show 1 card, tablet 2, desktop 3
   const getVisibleCount = () => {
     if (typeof window !== "undefined") {
       if (window.innerWidth >= 1024) return 3;
@@ -51,7 +50,6 @@ const HappyParents = () => {
     const handleResize = () => {
       const count = getVisibleCount();
       setVisibleCount(count);
-      // clamp index so we never show a blank slide
       setIndex((prev) => Math.min(prev, reviews.length - count));
     };
     window.addEventListener("resize", handleResize);
@@ -76,7 +74,7 @@ const HappyParents = () => {
       >
         {/* TITLE */}
         <div className="text-center pt-10 sm:pt-14 md:pt-16 pb-6 px-4">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-serif  text-[#3dbfb8] tracking-wide leading-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-serif text-[#3dbfb8] tracking-wide leading-tight">
             OUR HAPPY PARENTS
           </h1>
         </div>
@@ -130,25 +128,20 @@ const HappyParents = () => {
                 >
                   <div
                     className="bg-[#f4a0c0] rounded-3xl shadow-xl
-                               flex flex-col p-4 sm:p-5 md:p-6"
-                    style={{ minHeight: "260px" }}
+                               flex flex-col p-4 sm:p-5 md:p-6 h-full"
+                    style={{ height: "320px" }}  // ✅ fixed equal height
                   >
                     {/* NAME */}
-                    <h2
-                      className="font-extrabold font-serif font-bold text-sm sm:text-base md:text-lg mb-2 text-yellow-200 text-center"
-                      
-                    >
+                    <h2 className="font-extrabold font-serif text-sm sm:text-base md:text-lg mb-2 text-yellow-200 text-center">
                       {review.name}
                     </h2>
 
                     {/* TEXT */}
                     <div className="flex-1 overflow-y-auto scrollbar-hide pr-1 relative">
-                      <p
-                        className="text-black font-serif font-bold text-xs sm:text-sm md:text-base leading-relaxed text-justify"
-
-                      >
+                      <p className="text-black font-serif font-bold text-xs sm:text-sm md:text-base leading-relaxed text-justify">
                         {review.text}
                       </p>
+
                       <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-t from-[#f4a0c0] to-transparent pointer-events-none" />
                     </div>
                   </div>
@@ -157,7 +150,7 @@ const HappyParents = () => {
             </div>
           </div>
 
-          {/* DOT INDICATORS */}
+          {/* DOTS */}
           <div className="flex justify-center gap-2 mt-4">
             {Array.from({ length: maxIndex + 1 }).map((_, i) => (
               <button
@@ -184,13 +177,13 @@ const HappyParents = () => {
 
           <div className="absolute text-white -bottom-2 sm:bottom-4
                           text-xs sm:text-lg md:text-2xl
-                          left-1/2 -translate-x-1/2 text-center font-serif  font-extrabold whitespace-nowrap">
+                          left-1/2 -translate-x-1/2 text-center font-serif font-extrabold whitespace-nowrap">
             GOVERNMENT <br /> APPROVED <br /> PRESCHOOL
           </div>
 
           <img
             src={flowerBlue}
-            className="absolute bottom-2 left-2 sm:left-4 w-10 sm:w-14 md:w-16"
+            className="absolute bottom-2 left-2 sm:left-4 w-10 sm:w-14 md:w-40"
             alt=""
           />
 
@@ -203,27 +196,26 @@ const HappyParents = () => {
 
           <img
             src={rainbowCopy}
-            className="absolute bottom-12 sm:bottom-14 right-0 w-10 sm:w-14 rotate-180"
+            className="absolute bottom-12 sm:bottom-14 right-0 w-10 sm:w-24 rotate-180"
             alt=""
           />
         </div>
 
-        {/* FOOTER BANNER */}
+        {/* FOOTER */}
         <div className="relative mt-4 sm:mt-8 md:mt-12">
           <img src={separator} className="w-full" alt="" />
-<div className="absolute inset-0 flex items-center justify-center px-4">
-  <p className="text-[9px] sm:text-xs md:text-base lg:text-2xl font-extrabold text-center whitespace-nowrap">
-    
-    <span className="text-black mr-2">
-      WORLD RECORD HOLDER 
-    </span>
 
-    <span className="text-[#3dbfb8]">
-      IN INTERNATIONAL BOOK OF RECORDS
-    </span>
+          <div className="absolute inset-0 flex items-center justify-center px-4">
+            <p className="text-xs sm:text-sm md:text-lg lg:text-3xl font-black text-center whitespace-nowrap">
+              <span className="text-black mr-2 font-black">
+                WORLD RECORD HOLDER
+              </span>
 
-  </p>
-</div>
+              <span className="text-[#3dbfb8] font-black">
+                IN INTERNATIONAL BOOK OF RECORDS
+              </span>
+            </p>
+          </div>
         </div>
 
       </div>

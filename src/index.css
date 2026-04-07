@@ -26,6 +26,19 @@ body {
   position: relative;
   padding-bottom: 60px;
 }
+/* gentle initial shake */
+@keyframes gentleShake {
+  0% { transform: translateX(-50%) translateY(0); }
+  20% { transform: translateX(-48%) translateY(0); }
+  40% { transform: translateX(-52%) translateY(0); }
+  60% { transform: translateX(-49%) translateY(0); }
+  80% { transform: translateX(-51%) translateY(0); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+.shake-on-load {
+  animation: gentleShake 1s ease-in-out 1;
+}
 
 .hero-section::before {
   content: '';
