@@ -7,17 +7,29 @@ import separator from "../assets/DWHITE-SEPERATOR.png";
 
 /* ================= IMAGE IMPORT ================= */
 
-const getImages = (pattern: string) =>
-  Object.values(
-    import.meta.glob<{ default: string }>(pattern, { eager: true })
-  ).map((mod) => mod.default);
+const CELEBRATION = Object.values(
+  import.meta.glob("../assets/CELEBRATION/*.{png,jpg,jpeg}", { eager: true })
+).map((mod: any) => mod.default);
 
-const CELEBRATION = getImages("../assets/CELEBRATION/*.{png,jpg,jpeg}");
-const CLASS_ACTIVITY = getImages("../assets/CLASS-ACTIVITY/*.{png,jpg,jpeg}");
-const CO_CURRICULAR = getImages("../assets/CO-CURRICULAR/*.{png,jpg,jpeg}");
-const FIELD_TRIP = getImages("../assets/FIELD-TRIP/*.{png,jpg,jpeg}");
-const SPORTS_DAY = getImages("../assets/SPORTS_DAY/*.{png,jpg,jpeg}");
-const SPECIAL_DAYS_EVENTS = getImages("../assets/SPECIAL_DAYS_EVENTS/*.{png,jpg,jpeg}");
+const CLASS_ACTIVITY = Object.values(
+  import.meta.glob("../assets/CLASS-ACTIVITY/*.{png,jpg,jpeg}", { eager: true })
+).map((mod: any) => mod.default);
+
+const CO_CURRICULAR = Object.values(
+  import.meta.glob("../assets/CO-CURRICULAR/*.{png,jpg,jpeg}", { eager: true })
+).map((mod: any) => mod.default);
+
+const FIELD_TRIP = Object.values(
+  import.meta.glob("../assets/FIELD-TRIP/*.{png,jpg,jpeg}", { eager: true })
+).map((mod: any) => mod.default);
+
+const SPORTS_DAY = Object.values(
+  import.meta.glob("../assets/SPORTS_DAY/*.{png,jpg,jpeg}", { eager: true })
+).map((mod: any) => mod.default);
+
+const SPECIAL_DAYS_EVENTS = Object.values(
+  import.meta.glob("../assets/SPECIAL_DAYS_EVENTS/*.{png,jpg,jpeg}", { eager: true })
+).map((mod: any) => mod.default);
 
 /* ================= DATA ================= */
 
