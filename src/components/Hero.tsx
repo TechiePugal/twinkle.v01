@@ -107,9 +107,6 @@ const Hero = () => {
 
           <img src={logo} alt="Twinkle Preschool" className="w-44 drop-shadow mt-28" />
 
-          <p className="text-white text-[7px] font-bold tracking-wide text-center mt-1">
-            No. 34, Sri Nagar, Gobi. Behind Chakra Hospital
-          </p>
 
           <h1 className="text-white text-[13px] font-bold font-serif tracking-wide text-center leading-snug mt-0 mb-2">
             Where your little stars <br /> begin to shine

@@ -120,10 +120,9 @@ const WhyBest = () => {
         />
 
         {/* TITLE */}
-<div className="relative  z-10 px-5 sm:px-10 md:px-16 lg:px-20 mb-6 sm:mb-8 md:mb-10">
+<div className="relative z-10 px-5 sm:px-10 md:px-16 lg:px-20 mb-6 sm:mb-8 md:mb-10 text-center sm:text-left">
   <h1
-    className="text-sm  font-serif font-bold sm:text-lg md:text-2xl lg:text-3xl font-black text-[#3dbfb8]  tracking-wide whitespace-nowrap overflow-hidden text-ellipsis"
-
+    className="inline-block bg-[#f472b6] text-white text-sm font-serif font-bold sm:text-lg md:text-2xl lg:text-3xl font-black tracking-wide px-4 py-2 rounded-3xl"
   >
     WHY WE ARE THE BEST ?
   </h1>

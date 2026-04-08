@@ -6,6 +6,7 @@ import YellowFlower from "../assets/YELLOW-CLOUD.png";
 import flower from "../assets/blue-cloud-with-star.png";
 import separator from "../assets/WHITE-SEPERATOR.png";
 import { FaWhatsapp, FaYoutube, FaInstagram, FaFacebook } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -15,15 +16,47 @@ const ContactSection = () => {
     age: "",
     message: "",
   });
+
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
+  // ✅ FIXED: Only ONE handleSubmit inside component
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+
+    emailjs
+      .send(
+        "service_yrpx1oh", // 🔁 replace
+        "template_h08yphh", // 🔁 replace
+        {
+          parent_name: form.parent,
+          phone: form.phone,
+          child_name: form.child,
+          age: form.age,
+          message: form.message,
+        },
+        "jbGL1pEpXwgd2_XGN" // 🔁 replace
+      )
+      .then(() => {
+        setSubmitted(true);
+
+        // clear form
+        setForm({
+          parent: "",
+          phone: "",
+          child: "",
+          age: "",
+          message: "",
+        });
+
+        setTimeout(() => setSubmitted(false), 3000);
+      })
+      .catch((error) => {
+        console.error("FAILED...", error);
+        alert("Something went wrong ❌");
+      });
   };
 
   const inputClass =
@@ -31,7 +64,7 @@ const ContactSection = () => {
 
   return (
     <div id="contact" className="relative w-full overflow-hidden">
-
+      
       {/* BACKGROUND */}
       <div
         className="absolute inset-0"
@@ -56,7 +89,7 @@ const ContactSection = () => {
       {/* MAIN */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 md:px-10 lg:px-16 py-10 sm:py-14 md:py-16">
 
-        {/* MOBILE TOP DECOR */}
+        {/* MOBILE DECOR */}
         <div className="flex lg:hidden justify-center items-center gap-6 mb-6">
           <img src={aero} className="w-24 sm:w-28" />
           <img src={YellowFlower} className="w-14 sm:w-16" />
@@ -66,23 +99,60 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_180px_1fr] gap-6 lg:gap-4 items-start">
 
           {/* FORM */}
-         <div className="flex flex-col gap-2 lg:gap-3 lg:mt-6 xl:mt-10">
+          <div className="flex flex-col gap-2 lg:gap-3 lg:mt-6 xl:mt-10">
             <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-extrabold mb-1 text-center lg:text-left">
               ADMISSION ENQUIRY
             </h2>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-              <input name="parent" value={form.parent} onChange={handleChange}
-                type="text" placeholder="Parents Name" required className={inputClass} />
-              <input name="phone" value={form.phone} onChange={handleChange}
-                type="tel" placeholder="Phone number" required className={inputClass} />
-              <input name="child" value={form.child} onChange={handleChange}
-                type="text" placeholder="Child Name" required className={inputClass} />
-              <input name="age" value={form.age} onChange={handleChange}
-                type="text" placeholder="Age of Child" required className={inputClass} />
-              <textarea name="message" value={form.message} onChange={handleChange}
-                placeholder="Message" rows={4}
-                className={`${inputClass} resize-none`} />
+              <input
+                name="parent"
+                value={form.parent}
+                onChange={handleChange}
+                type="text"
+                placeholder="Parents Name"
+                required
+                className={inputClass}
+              />
+
+              <input
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
+                type="tel"
+                placeholder="Phone number"
+                required
+                className={inputClass}
+              />
+
+              <input
+                name="child"
+                value={form.child}
+                onChange={handleChange}
+                type="text"
+                placeholder="Child Name"
+                required
+                className={inputClass}
+              />
+
+              <input
+                name="age"
+                value={form.age}
+                onChange={handleChange}
+                type="text"
+                placeholder="Age of Child"
+                required
+                className={inputClass}
+              />
+
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Message"
+                rows={4}
+                className={`${inputClass} resize-none`}
+              />
 
               <button
                 type="submit"
@@ -90,7 +160,7 @@ const ContactSection = () => {
                            text-white font-extrabold py-3 rounded-full shadow-lg
                            transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
-                {submitted ? "✅ Enquiry Sent!" : "Submit Enquiry "}
+                {submitted ? "✅ Enquiry Sent!" : "Submit Enquiry"}
               </button>
             </form>
           </div>
@@ -104,9 +174,8 @@ const ContactSection = () => {
           {/* CONTACT */}
           <div className="flex flex-col gap-2 lg:gap-3 relative text-center lg:text-left">
 
-            {/* HEADER */}
             <div className="relative flex items-center justify-center lg:justify-between">
-              <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-extrabold lg:text-left">
+              <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-extrabold">
                 CONTACT
               </h2>
 
@@ -116,7 +185,6 @@ const ContactSection = () => {
               />
             </div>
 
-            {/* ADDRESS */}
             <p className="text-white font-serif font-bold text-sm sm:text-base md:text-lg leading-relaxed">
               Twinkle Preschool<br />
               No. 34, Sri Nagar, Gobichettipalayam.<br />
@@ -124,7 +192,6 @@ const ContactSection = () => {
               Ph : 95979 43221, 96777 20424
             </p>
 
-            {/* SOCIAL */}
             <div className="flex flex-col gap-3">
               {[
                 { icon: <FaWhatsapp className="text-green-500 text-2xl" />, label: "75300 62559" },
@@ -141,11 +208,10 @@ const ContactSection = () => {
               ))}
             </div>
 
-            {/* MAP */}
             <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-white/40 mt-1 w-full max-w-md mx-auto lg:mx-0">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18..."
-                className="w-full h-40 sm:h-44 md:h-48"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.3693350646113!2d77.4232403!3d11.453245399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba93d1812068f81%3A0xfe99132eaf499166!2sTwinkle%20Pre%20School%20-%20Kids%20school!5e0!3m2!1sen!2sin!4v1775644367981!5m2!1sen!2sin"
+className="w-full h-40 sm:h-44 md:h-48"
                 style={{ border: 0 }}
                 loading="lazy"
               />
@@ -153,14 +219,12 @@ const ContactSection = () => {
 
           </div>
         </div>
-
       </div>
 
-      {/* BOTTOM SEPARATOR */}
+      {/* SEPARATOR */}
       <div className="relative w-full mt-2 sm:mt-6">
         <img src={separator} className="w-full" />
       </div>
-
     </div>
   );
 };

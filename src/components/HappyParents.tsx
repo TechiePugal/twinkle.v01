@@ -62,7 +62,7 @@ const HappyParents = () => {
   const prevSlide = () => setIndex((prev) => Math.max(prev - 1, 0));
 
   return (
-    <div className="relative w-full overflow-hidden font-sans">
+    <div id="testimonials" className="relative w-full overflow-hidden font-sans">
       <div
         className="relative w-full"
         style={{
@@ -73,11 +73,11 @@ const HappyParents = () => {
         }}
       >
         {/* TITLE */}
-        <div className="text-center pt-10 sm:pt-14 md:pt-16 pb-6 px-4">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-serif text-[#3dbfb8] tracking-wide leading-tight">
-            OUR HAPPY PARENTS
-          </h1>
-        </div>
+<div className="text-center pt-10 sm:pt-14 md:pt-16 pb-6 px-4">
+  <h1 className="inline-block bg-[#3dbfb8] text-white text-xl sm:text-2xl md:text-2xl lg:text-3xl font-extrabold font-serif tracking-wide leading-tight px-4 py-2 rounded-3xl">
+    OUR HAPPY PARENTS
+  </h1>
+</div>
 
         {/* SLIDER */}
         <div className="relative px-8 sm:px-10 md:px-14 lg:px-20 pb-10">
@@ -175,12 +175,12 @@ const HappyParents = () => {
             alt=""
           />
 
-          <div className="absolute text-white -bottom-2 sm:bottom-4
-                          text-xs sm:text-lg md:text-2xl
-                          left-1/2 -translate-x-1/2 text-center font-serif font-extrabold whitespace-nowrap">
-            GOVERNMENT <br /> APPROVED <br /> PRESCHOOL
-          </div>
-
+<div className="absolute text-white -bottom-2 sm:bottom-4
+                text-[10px] sm:text-lg md:text-2xl
+                left-1/2 -translate-x-1/2 text-center font-serif font-extrabold whitespace-nowrap leading-tight">
+  GOVERNMENT <br />
+  <span className="text-[#3dbfb8]">APPROVED <br /> PRESCHOOL</span>
+</div>
           <img
             src={flowerBlue}
             className="absolute bottom-2 left-2 sm:left-4 w-10 sm:w-14 md:w-40"
@@ -206,16 +206,18 @@ const HappyParents = () => {
           <img src={separator} className="w-full" alt="" />
 
           <div className="absolute inset-0 flex items-center justify-center px-4">
-            <p className="text-xs sm:text-sm md:text-lg lg:text-3xl font-black text-center whitespace-nowrap">
-              <span className="text-black mr-2 font-black">
-                WORLD RECORD HOLDER
-              </span>
+  <p className="text-[9px] sm:text-xs md:text-base lg:text-2xl font-black text-center whitespace-nowrap">
+    
+    <span className="text-black mr-1 sm:mr-2 font-black">
+      WORLD RECORD HOLDER
+    </span>
 
-              <span className="text-[#3dbfb8] font-black">
-                IN INTERNATIONAL BOOK OF RECORDS
-              </span>
-            </p>
-          </div>
+    <span className="text-[#3dbfb8] font-black">
+      IN INTERNATIONAL BOOK OF RECORDS
+    </span>
+
+  </p>
+</div>
         </div>
 
       </div>

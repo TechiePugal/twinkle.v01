@@ -22,14 +22,14 @@ const About = () => {
       />
 
       {/* BACKGROUND WRAPPER */}
-      <div
-        className="relative w-full min-h-screen"
-        style={{
-          backgroundImage: `url(${bg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+<div className="relative w-full min-h-screen">
+
+  {/* BACKGROUND IMAGE */}
+  <img
+    src={bg}
+    alt=""
+    className="absolute inset-0 w-full h-full object-cover -z-10"
+  />
 
         {/* ── RAINBOW TOP-LEFT ───────────────────────── */}
         <img
