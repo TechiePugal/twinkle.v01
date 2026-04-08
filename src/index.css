@@ -39,7 +39,18 @@ body {
 .shake-on-load {
   animation: gentleShake 1s ease-in-out 1;
 }
+.input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f9fafb;
+  outline: none;
+  font-size: 14px;
+}
 
+.input:focus {
+  ring: 2px solid #f472b6;
+}
 .hero-section::before {
   content: '';
   position: absolute;
