@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // CLASS IMAGES
 import playgroup from "../assets/PIC1.png";
@@ -39,10 +39,66 @@ const classes = [
   },
 ];
 
+/* ── keyframes ─────────────────────────────────────────────────── */
+const animStyles = `
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-12px); }
+  }
+  @keyframes floatYAlt {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+  }
+  @keyframes starSpin {
+    0%   { transform: rotate(0deg) scale(1); }
+    50%  { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+  @keyframes planeFly {
+    0%   { transform: translateX(0px) translateY(0px); }
+    25%  { transform: translateX(10px) translateY(-6px); }
+    75%  { transform: translateX(-5px) translateY(-2px); }
+    100% { transform: translateX(0px) translateY(0px); }
+  }
+  @keyframes rainbowPulse {
+    0%, 100% { opacity: 0.9; }
+    50%       { opacity: 0.5; }
+  }
+  @keyframes titleDrop {
+    from { opacity: 0; transform: translateY(-30px) scale(0.9); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes cardPopUp {
+    0%   { opacity: 0; transform: translateY(50px) scale(0.85); }
+    70%  { transform: translateY(-6px) scale(1.03); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes cardShine {
+    0%   { box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    50%  { box-shadow: 0 16px 40px rgba(255,165,0,0.22); }
+    100% { box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+  }
+`;
+
 const Classes = () => {
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <div
       id="classes"
+      ref={sectionRef}
       className="relative w-full overflow-hidden py-12 sm:py-14 md:py-16"
       style={{
         backgroundImage: `url(${bgPattern})`,
@@ -51,17 +107,21 @@ const Classes = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* AERO */}
-<img
-  src={aero}
-  alt=""
-  className="absolute pointer-events-none
-             -top-2 left-6 w-28
-             sm:top-8 sm:left-16 sm:w-36
-             md:top-4 md:left-32 md:w-52   /* moved up */
-             lg:top-2 lg:left-44 lg:w-64"  /* moved up more */
-/>
-      {/* STAR */}
+      <style>{animStyles}</style>
+
+      {/* AERO — flying loop */}
+      <img
+        src={aero}
+        alt=""
+        className="absolute pointer-events-none
+                   -top-2 left-6 w-28
+                   sm:top-8 sm:left-16 sm:w-36
+                   md:top-4 md:left-32 md:w-52
+                   lg:top-2 lg:left-44 lg:w-64"
+        style={{ animation: "planeFly 5s ease-in-out infinite" }}
+      />
+
+      {/* STAR — spinning */}
       <img
         src={star}
         alt=""
@@ -70,9 +130,10 @@ const Classes = () => {
                    sm:top-8 sm:right-[30%] sm:w-14
                    md:top-8 md:right-[33%] md:w-20
                    lg:top-8 lg:right-[33%] lg:w-24"
+        style={{ animation: "starSpin 8s linear infinite" }}
       />
 
-      {/* FLOWER */}
+      {/* FLOWER — floating */}
       <img
         src={flower}
         alt=""
@@ -81,14 +142,22 @@ const Classes = () => {
                    sm:top-14 sm:right-8 sm:w-24
                    md:top-18 md:right-14 md:w-32
                    lg:top-20 lg:right-24 lg:w-40"
+        style={{ animation: "floatY 5s ease-in-out infinite 0.8s" }}
       />
 
-      {/* TITLE */}
-      <h1 className="relative font-serif font-bold z-10 text-center text-white font-bold tracking-wide
-                     text-3xl mb-6
-                     sm:text-4xl sm:mb-8
-                     md:text-5xl md:mb-10
-                     lg:text-6xl lg:mb-12">
+      {/* TITLE — drop in on scroll */}
+      <h1
+        className="relative font-serif font-bold z-10 text-center text-white font-bold tracking-wide
+                   text-3xl mb-6
+                   sm:text-4xl sm:mb-8
+                   md:text-5xl md:mb-10
+                   lg:text-6xl lg:mb-12"
+        style={
+          visible
+            ? { animation: "titleDrop 0.8s cubic-bezier(0.34,1.56,0.64,1) both" }
+            : { opacity: 0 }
+        }
+      >
         CLASSES
       </h1>
 
@@ -103,12 +172,22 @@ const Classes = () => {
                        text-center shadow-xl
                        hover:scale-105 transition duration-300
                        flex flex-col items-center
-
                        w-[82%] sm:w-[88%] md:w-[240px] lg:w-[260px] xl:w-[280px]
                        min-h-[330px] sm:min-h-[350px] md:min-h-[370px]"
+            style={
+              visible
+                ? {
+                    animation: `cardPopUp 0.7s cubic-bezier(0.34,1.56,0.64,1) ${0.2 + index * 0.15}s both,
+                                cardShine 4s ease-in-out ${1 + index * 0.3}s infinite`,
+                  }
+                : { opacity: 0 }
+            }
           >
-            {/* IMAGE */}
-            <div className="w-full aspect-square rounded-[24px] sm:rounded-[30px] -mb-10 -mt-9 flex items-center justify-center">
+            {/* IMAGE — gentle float per card */}
+            <div
+              className="w-full aspect-square rounded-[24px] sm:rounded-[30px] -mb-10 -mt-9 flex items-center justify-center"
+              style={{ animation: `floatYAlt ${4.5 + index * 0.4}s ease-in-out infinite ${index * 0.5}s` }}
+            >
               <img
                 src={item.img}
                 alt={item.title}
@@ -122,16 +201,16 @@ const Classes = () => {
             </h2>
 
             {/* DESCRIPTION */}
-<p className="text-gray-800 font-serif font-bold leading-relaxed text-justify
-              text-[14px] sm:text-[15px] md:text-base
-              w-full px-2 pb-1">
-  {item.desc}
-</p>
+            <p className="text-gray-800 font-serif font-bold leading-relaxed text-justify
+                          text-[14px] sm:text-[15px] md:text-base
+                          w-full px-2 pb-1">
+              {item.desc}
+            </p>
           </div>
         ))}
       </div>
 
-      {/* RAINBOW */}
+      {/* RAINBOW — pulsing */}
       <img
         src={rainbow}
         alt=""
@@ -140,6 +219,7 @@ const Classes = () => {
                    sm:-bottom-14 sm:w-[700px]
                    md:-bottom-18 md:w-[900px]
                    lg:-bottom-20 lg:w-[1200px]"
+        style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
       />
 
       {/* SEPARATOR */}

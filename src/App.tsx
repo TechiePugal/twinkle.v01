@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       {/* ✅ POPUP FORM (Top priority layer) */}
-      <PopupForm />
+      {/* <PopupForm /> */}
 
       {/* NAVBAR */}
       <Navbar />
@@ -33,7 +33,7 @@ function App() {
 
         {/* 📞 Phone Call */}
         <a
-          href="tel:+917530062559"
+          href="tel:+919597943221"
           className="bg-white hover:bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
         >
           <img
