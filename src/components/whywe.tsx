@@ -132,7 +132,7 @@ const WhyBest = () => {
                      -left-16 top-[30%] w-[160px]
                      md:-left-20 md:w-[240px]
                      lg:-left-28 lg:w-[300px]"
-          style={{ animation: "rainbowPulse 7s ease-in-out infinite" }}
+          // style={{ animation: "rainbowPulse 7s ease-in-out infinite" }}
         />
 
         {/* TOP CENTER RAINBOW */}
@@ -144,7 +144,7 @@ const WhyBest = () => {
                      sm:-top-14 sm:w-[320px]
                      md:-top-16 md:w-[460px]
                      lg:w-[600px]"
-          style={{ animation: "rainbowPulseCenter 5s ease-in-out infinite 0.5s" }}
+          // style={{ animation: "rainbowPulseCenter 5s ease-in-out infinite 0.5s" }}
         />
 
         {/* BOTTOM RIGHT RAINBOW */}
@@ -155,7 +155,7 @@ const WhyBest = () => {
                      -right-6 bottom-28 w-[80px]
                      md:-right-8 md:bottom-32 md:w-[120px]
                      lg:-right-10 lg:w-[140px]"
-          style={{ animation: "rainbowPulse 6s ease-in-out infinite 1s" }}
+          // style={{ animation: "rainbowPulse 6s ease-in-out infinite 1s" }}
         />
 
         {/* BALLOON — drifting float */}

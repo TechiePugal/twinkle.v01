@@ -96,17 +96,17 @@ const Hero = () => {
         <img
           src={rainbow}
           className="absolute -top-20 left-1/2 w-[820px] opacity-90 transform -translate-x-1/2 rotate-180"
-          style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
+          // style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
         />
         <img
           src={rainbow2}
           className="absolute -bottom-10 -right-28 w-[300px]"
-          style={{ animation: "rainbowPulse 7s ease-in-out infinite 1s" }}
+          // style={{ animation: "rainbowPulse 7s ease-in-out infinite 1s" }}
         />
         <img
           src={rainbow3}
           className="absolute -bottom-80 -left-40 w-[630px]"
-          style={{ animation: "rainbowPulse 8s ease-in-out infinite 0.5s" }}
+          // style={{ animation: "rainbowPulse 8s ease-in-out infinite 0.5s" }}
         />
 
         {/* CLOUDS — floating */}
@@ -209,17 +209,17 @@ const Hero = () => {
         <img
           src={rainbow}
           className="absolute -top-8 left-1/2 w-[420px] opacity-100 transform -translate-x-1/2 rotate-180"
-          style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
+          // style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
         />
         <img
           src={rainbow2}
           className="absolute -right-10 bottom-0 w-[150px]"
-          style={{ animation: "rainbowPulse 7s ease-in-out infinite 1s" }}
+          // style={{ animation: "rainbowPulse 7s ease-in-out infinite 1s" }}
         />
         <img
           src={rainbow3}
           className="absolute -bottom-40 -left-20 w-[320px]"
-          style={{ animation: "rainbowPulse 8s ease-in-out infinite 0.5s" }}
+          // style={{ animation: "rainbowPulse 8s ease-in-out infinite 0.5s" }}
         />
 
         {/* CLOUDS */}

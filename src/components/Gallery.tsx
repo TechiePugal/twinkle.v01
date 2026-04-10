@@ -178,13 +178,13 @@ const GallerySection = () => {
           src={rainbow}
           alt=""
           className="hidden sm:block absolute rotate-90 -left-16 -top-[5%] w-[220px] md:w-[320px] z-0"
-          style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
+          // style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
         />
         <img
           src={rainbowCopy}
           alt=""
           className="hidden sm:block absolute rotate-180 -right-6 bottom-28 md:bottom-36 w-[140px] md:w-[200px] z-0"
-          style={{ animation: "rainbowPulse 7s ease-in-out infinite 1s" }}
+          // style={{ animation: "rainbowPulse 7s ease-in-out infinite 1s" }}
         />
         <img
           src={flowerBlue}

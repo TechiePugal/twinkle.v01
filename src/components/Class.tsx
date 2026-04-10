@@ -118,7 +118,7 @@ const Classes = () => {
                    sm:top-8 sm:left-16 sm:w-36
                    md:top-4 md:left-32 md:w-52
                    lg:top-2 lg:left-44 lg:w-64"
-        style={{ animation: "planeFly 5s ease-in-out infinite" }}
+          style={{ animation: "floatYSlow 6s ease-in-out infinite 1.5s" }}
       />
 
       {/* STAR — spinning */}
@@ -219,7 +219,7 @@ const Classes = () => {
                    sm:-bottom-14 sm:w-[700px]
                    md:-bottom-18 md:w-[900px]
                    lg:-bottom-20 lg:w-[1200px]"
-        style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
+        // style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
       />
 
       {/* SEPARATOR */}

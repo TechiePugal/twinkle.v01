@@ -75,7 +75,9 @@ const ContactSection = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
   const sectionRef = useRef(null);
+  const footerRef = useRef(null);
 
   /* scroll trigger */
   useEffect(() => {
@@ -83,6 +85,18 @@ const ContactSection = () => {
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.08 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  /* footer scroll trigger */
+  useEffect(() => {
+    const el = footerRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setFooterVisible(true); obs.disconnect(); } },
       { threshold: 0.08 }
     );
     obs.observe(el);
@@ -147,12 +161,12 @@ const ContactSection = () => {
       <img
         src={rainbowRight}
         className="hidden sm:block absolute -left-6 top-20 w-20 md:w-32 opacity-90"
-        style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
+        // style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
       />
       <img
         src={rainbowRight}
         className="hidden sm:block absolute right-0 -bottom-28 w-24 md:w-36 opacity-90 rotate-180"
-        style={{ animation: "rainbowPulse 7s ease-in-out infinite 1s" }}
+        // style={{ animation: "rainbowPulse 7s ease-in-out infinite 1s" }}
       />
 
       {/* MAIN */}
@@ -163,7 +177,7 @@ const ContactSection = () => {
           <img
             src={aero}
             className="w-24 sm:w-28"
-            style={{ animation: "planeFly 4s ease-in-out infinite" }}
+              style={{ animation: "floatY 5s ease-in-out infinite 1s" }}
           />
           <img
             src={YellowFlower}
@@ -248,7 +262,7 @@ const ContactSection = () => {
             <img
               src={aero}
               className="w-40 xl:w-48"
-              style={{ animation: "planeFly 4s ease-in-out infinite" }}
+              style={{ animation: "floatY 5s ease-in-out infinite 1s" }}
             />
             <img
               src={YellowFlower}
@@ -278,7 +292,7 @@ const ContactSection = () => {
             </div>
 
             <p
-              className="text-white font-serif font-bold text-sm sm:text-base md:text-lg leading-relaxed"
+              className="text-white font-serif font-bold text-sm sm:text-base md:text-lg -mt-0 md:-mt-10 leading-relaxed"
               style={
                 visible
                   ? { animation: "fadeSlideUp 0.7s ease-out 0.4s both" }
@@ -333,9 +347,63 @@ const ContactSection = () => {
       </div>
 
       {/* SEPARATOR */}
-      <div className="relative w-full mt-2 sm:mt-6">
-        <img src={separator} className="w-full" />
-      </div>
+{/* FOOTER */}
+<div className="relative mt-4 sm:mt-8 md:mt-12" ref={footerRef}>
+  <img src={separator} className="w-full" alt="" />
+
+  <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+    
+    {/* MAIN TEXT */}
+    {/* <p
+      className="text-[9px] sm:text-xs md:text-base lg:text-2xl font-black text-center whitespace-nowrap"
+      style={
+        footerVisible
+          ? { animation: "cardFadeIn 0.8s ease-out both" }
+          : { opacity: 0 }
+      }
+    >
+      <span className="text-black mr-1 sm:mr-2 font-black">
+        WORLD RECORD HOLDER
+      </span>
+      <span
+        className="text-[#3dbfb8] font-black"
+        style={{ animation: "badgeGlow 3s ease-in-out infinite 0.5s" }}
+      >
+        IN INTERNATIONAL BOOK OF RECORDS
+      </span>
+    </p> */}
+
+    {/* CREDITS TEXT */}
+    <p
+      className="mt-1 sm:mt-2 text-[7px] sm:text-[10px] md:text-xs text-gray-700 text-center"
+      style={
+        footerVisible
+          ? { animation: "cardFadeIn 1.2s ease-out both" }
+          : { opacity: 0 }
+      }
+    >
+      Developed by{" "}
+      <a
+        href="https://elitecrows.in"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-semibold text-black hover:underline"
+      >
+        EliteCrows
+      </a>{" "}
+      | Image designed by{" "}
+      <a
+        href="https://www.freepik.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-semibold text-black hover:underline"
+      >
+        freepik.com
+      </a>
+    </p>
+
+  </div>
+</div>
     </div>
   );
 };

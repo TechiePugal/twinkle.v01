@@ -102,7 +102,7 @@ const About = () => {
                      sm:-left-20 sm:top-0 sm:w-[420px]
                      md:-left-24 md:top-2 md:w-[580px]
                      lg:-left-28 lg:top-2 lg:w-[700px]"
-          style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
+          // style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
         />
 
         {/* ── RAINBOW BOTTOM-RIGHT ───────────────────── */}
@@ -114,7 +114,7 @@ const About = () => {
                      sm:-right-10 sm:-bottom-6 sm:w-[140px]
                      md:-right-16 md:-bottom-8 md:w-[180px]
                      lg:-right-20 lg:-bottom-10 lg:w-[180px]"
-          style={{ animation: "rainbowPulse 7s ease-in-out infinite 1s" }}
+          // style={{ animation: "rainbowPulse 7s ease-in-out infinite 1s" }}
         />
 
         {/* ── FLOWER YELLOW (bottom-right) — floating ── */}
@@ -150,7 +150,7 @@ const About = () => {
                      sm:-bottom-1 sm:left-[39%] sm:w-36
                      md:-bottom-1 md:left-[33%] md:w-40
                      lg:bottom-2 lg:left-[35%] lg:w-44"
-          style={{ animation: "planeFly 4s ease-in-out infinite" }}
+          style={{ animation: "floatYSlow 6s ease-in-out infinite 1.5s" }}
         />
 
         {/* ── STAR — spinning ───────────────────────── */}

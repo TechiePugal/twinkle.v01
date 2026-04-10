@@ -161,7 +161,7 @@ const HappyParents = () => {
           <button
             onClick={prevSlide}
             className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20
-                       bg-[#f4a0c0] text-white
+                       bg-[#3dbfb8] text-white
                        w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10
                        rounded-full shadow-lg flex items-center justify-center
                        text-lg sm:text-xl
@@ -174,7 +174,7 @@ const HappyParents = () => {
           <button
             onClick={nextSlide}
             className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20
-                       bg-[#f4a0c0] text-white
+                       bg-[#3dbfb8] text-white
                        w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10
                        rounded-full shadow-lg flex items-center justify-center
                        text-lg sm:text-xl
@@ -248,7 +248,7 @@ const HappyParents = () => {
             src={rainbow}
             className="absolute -bottom-20 sm:-bottom-36 md:-bottom-56 left-1/2 -translate-x-1/2 w-[90%] sm:w-[80%] md:w-[70%]"
             alt=""
-            style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
+            // style={{ animation: "rainbowPulse 6s ease-in-out infinite" }}
           />
 
           <div
@@ -281,9 +281,9 @@ const HappyParents = () => {
           {/* HELICOPTER — flying */}
           <img
             src={plane}
-            className="absolute bottom-4 right-4 sm:right-12 md:right-28 w-16 sm:w-24 md:w-36"
+            className="absolute bottom-4 right-4 sm:right-12 md:right-28 w-36 sm:w-24 md:w-36"
             alt=""
-            style={{ animation: "helicopterFly 4s ease-in-out infinite" }}
+          style={{ animation: "floatYSlow 6s ease-in-out infinite 1.5s" }}
           />
 
           {/* RAINBOW COPY — pulse */}
@@ -291,7 +291,7 @@ const HappyParents = () => {
             src={rainbowCopy}
             className="absolute bottom-12 sm:bottom-14 right-0 w-10 sm:w-24 rotate-180"
             alt=""
-            style={{ animation: "rainbowPulse 7s ease-in-out infinite 0.5s" }}
+            // style={{ animation: "rainbowPulse 7s ease-in-out infinite 0.5s" }}
           />
         </div>
 
